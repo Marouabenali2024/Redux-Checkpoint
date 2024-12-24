@@ -1,0 +1,77 @@
+.form-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 20px; 
+  justify-content: center;
+     position: relative; 
+  top: 20px ;
+}
+
+#inputTask {
+  background: transparent; 
+  border: none; 
+  border-bottom: 2px solid white; 
+  padding: 10px;
+  font-size: 1em;
+  width: 200px;
+  transition: all 0.3s ease;
+   position: relative; 
+  top: 20px ;
+}
+
+#inputTask:focus {
+  outline: none;
+  border-bottom: 2px solid #0056b3; 
+}
+
+#inputTask::placeholder {
+  color: #bbb;
+}
+
+.form-control {
+  background: transparent; 
+  border: none; 
+  border-bottom: 2px solid #007bff;
+  padding: 10px;
+  font-size: 1em;
+  width: 70%; 
+  transition: all 0.3s ease;
+  color: #333; 
+  position: relative; 
+  top: 20px ;
+}
+
+.form-control:focus {
+  outline: none; 
+  border-bottom: 2px solid #0056b3;
+}
+
+.form-control::placeholder {
+  color: green; 
+}
+.add-task-button {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  color: white !important;
+  border: 1px white solid !important; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; 
+  top: 25px; 
+}
+.add-task-button:hover {
+  background-color: #218838; 
+  color: #f8f9fa;
+}
+
+.add-task-button:focus {
+  outline: none; 
+}
+
+.add-task-button svg {
+  font-size: 1.2em; 
+}
