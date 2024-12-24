@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Alert from "react-bootstrap/Alert";
-import { AiOutlinePlusCircle } from "react-icons/ai"; 
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import "./TasksList.css";
 import TaskItem from "../TaskItem/TaskItem";
 
@@ -16,8 +16,11 @@ function TasksList() {
 
     if (task.status === "deleted") return false;
 
-    if (filter === "all") return true; 
-    return task.status === filter; 
+    if (filter === "all") return true;
+
+    if (filter === "pending") return task.status === "in-progress";
+
+    return task.status === filter;
   });
 
   return (
@@ -26,17 +29,17 @@ function TasksList() {
         <button onClick={() => setFilter("all")}>All</button>
         <button onClick={() => setFilter("pending")}>Pending</button>
         <button onClick={() => setFilter("complete")}>Complete</button>
-        <button onClick={() => setFilter("deleted")}>Deleted</button>{" "}
+        <button onClick={() => setFilter("deleted")}>Deleted</button>
       </div>
 
       {filteredTasks.length > 0 ? (
         filteredTasks.map((task) => (
           <TaskItem
-            key={task.id} 
+            key={task.id}
             title={task.title}
             status={task.status}
             id={task.id}
-            dateTime={task.dateTime} 
+            dateTime={task.dateTime}
           />
         ))
       ) : (
